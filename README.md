@@ -38,11 +38,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-NAME	FUNCTION	IP ADDRESS	OS
-Jump Box	Web gateway 	10.0.0.4	Ubuntu linux 18.04
-Web -1	Web Server	10.0.0.5	Ubuntu linux 18.04
-Web-2	Web server	10.0.0.6	Ubuntu linux 18.04
-ELK 	ELK server	10.1.0.4	Ubuntu linux 18.04
+| Name    	| Function    	| IP address 	| OS                 	|
+|---------	|-------------	|------------	|--------------------	|
+| Jumpbox 	| Web-gateway 	| 10.0.0.4   	| Ubuntu Linux 18.04 	|
+| Web-1   	| Web-server  	| 10.0.0.5   	| Ubuntu Linux 18.04 	|
+| Web-2   	| Web-Server  	| 10.0.0.6   	| Ubuntu Linux 18.04 	|
+| ELK     	| ELK server  	| 10.1.0.4   	| Ubuntu Linux 18.04 	|
+
 
 ### Access Policies
 
@@ -58,11 +60,13 @@ Machines within the network can only be accessed by jumpbox_____.
 
 A summary of the access policies in place can be found in the table below.
 
-NAME	PUBICALLY ACCESSIBLE	IP ADDRESS
-Jump Box 	Yes 	52.188.65.178 via ssh
-Web 1 	no	10.0.0.5 http access port 80
-Web 2	no	10.0.0.6 http access port 80
-ELK Server	no	Ssh from jumbox, Kibana http port 5601
+| Name     	| Physicalle accessible 	| IP address                              	|
+|----------	|-----------------------	|-----------------------------------------	|
+| Jump-Box 	| Yes                   	| 52.188.65.178 via ssh                   	|
+| Web-1    	| No                    	| 10.0.0.5 accessible port 80             	|
+| Web-2    	| No                    	| 10.0.0.6 accessible port 80             	|
+| ELK      	| No                    	| ssh from jumpbox ,Kibana http port 5601 	|
+
 
 ### Elk Configuration
 
@@ -117,7 +121,7 @@ SSH into the control node and follow the steps below:
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it ?_filebeat-playbook.yml and metricbeat-playbook.yml copied to /etc/ansible/roles
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_hosts file the
+- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_hosts file.cfg the private ip of the machine to which ELK and Filebeats should be installed on should be updated in the /etc/ansible file.
 - _Which URL do you navigate to in order to check that the ELK server is running? http://publicIPELK:5601/app/Kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
